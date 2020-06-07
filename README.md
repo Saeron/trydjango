@@ -32,6 +32,8 @@ https://www.youtube.com/watch?v=F5mRW0jo-U4
 - <code>blank=True</code> means that it's required on frontend.
 - <code>null="False"</code> means that can't be null on database.
 - Views are receiving as a first parameter request, and we can see the request including the user by print it <code>print(request.user)</code>
+- Create templates better inside the apps folders.
+- If you want to create a object whit a dictionary, you can use <code>**dictionary</code> to convert it in parameters.
 
 # Parts
 
@@ -48,7 +50,18 @@ https://www.youtube.com/watch?v=F5mRW0jo-U4
 - Also is possible to use conditions whit <code>{% if condition %}code{% endif %}</code> or {% else %}
 - Built-in filter are a awesome tool to transform variables: <link>https://docs.djangoproject.com/en/3.0/ref/templates/builtins/</link>
 - <code>|safe</code> filter render the html code.
+- With <code>form action="http://www.google.com/search method="GET"</code> you can perform a google search.
+- <code>{% csrf_token %}</code> is needed for security when you perform a POST or a GET
 
 # Shell
 - Console: <code>python manage.py shell</code>
 
+# Forms
+- There is a lot of ways to do it, but you can extends the class form from django
+- <code>{{form.as_p}}</code> helps you to implements the html using the model.
+- <code>def clean_fieldName</code> and get de actual field whit <code>self.cleaned_code.get["field]</code> will help you to make your owns validations.
+
+# Dynamic
+- To do a dynamic view, you need to add <code>/int:id/</code> to your URL and and <code>id</code> as a parameter to the assigned view.
+- Use also <code>get_object_or_404</code> to avoid problems
+- The redirect shortcut is a nice one, us it with <code>return redirect("../direction)</code>
